@@ -1,0 +1,103 @@
+.pxe_ajax_search {
+    padding: 0 5px 5px;
+    border: 1px solid #dedede;
+}
+.pxe_ajax_search a {
+    display: block;
+    padding: 0 5px;
+}
+.pxe_ajax_search a:hover {
+    background: #e7e7e7;
+    text-decoration: none;
+}
+.pxe_ajax_search input {
+    width: 100%;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+.pxe_ajax_search .input-container {
+    position: relative;
+}
+.pxe_ajax_search .loader {
+    position: relative;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    animation: around 5.4s infinite;
+    display: none;
+}
+.pxe_ajax_search .close {
+    height: 20px;
+    width: 20px;
+    
+}
+
+.pxe_ajax_search .close {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  opacity: 0.3;
+  display: none;
+}
+.close.typing {
+    display: block;
+}
+.pxe_ajax_search .close:hover {
+  opacity: 1;
+}
+.pxe_ajax_search .close:before, .pxe_ajax_search .close:after {
+  position: absolute;
+  left: 10px;
+  content: ' ';
+  height: 20px;
+  width: 2px;
+  background-color: #333;
+}
+.pxe_ajax_search .close:before {
+  transform: rotate(45deg);
+}
+.pxe_ajax_search .close:after {
+  transform: rotate(-45deg);
+}
+
+
+.pxe_ajax_search .loader.loading {
+    display: block;
+}
+.pxe_ajax_search .icon-container {
+    position: absolute;
+    right: 10px;
+    top: calc(50% - 10px);
+}
+@keyframes around {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+.loader::after, .loader::before {
+  content: "";
+  background: white;
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-width: 2px;
+  border-color: #333 #333 transparent transparent;
+  border-style: solid;
+  border-radius: 20px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  animation: around 0.7s ease-in-out infinite;
+}
+
+.pxe_ajax_search .loader::after {
+  animation: around 0.7s ease-in-out 0.1s infinite;
+  background: transparent;
+}
