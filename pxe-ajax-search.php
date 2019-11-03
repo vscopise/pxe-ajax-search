@@ -25,7 +25,7 @@ class PXE_Ajax_Search_Widget extends WP_Widget {
                 'description' => 'Buscador Ajax',
             ) 
         );
-        if ( is_active_widget( false, false, $this->id_base, true ) ) {
+        if ( is_active_widget( false, false, $this->id_base ) ) {
             add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_script' ) );
         }
         add_action( 'wp_ajax_nopriv_pxe_ajax_search', array( $this, 'ajax_callback'));
